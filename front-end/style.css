@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color:#210006
+}
+
+.menu-lateral {
+    width: 180px;
+    height: 100vh;
+    background-color: #4B0D1A;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navegacao {
+    width: 100%;
+    margin-top: 60px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.logo {
+    margin-top: 35px;
+}
+
+.item-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    padding: 20px 5px;
+    text-decoration: none;
+    color: #D9CBA8;
+}
+
+.item-menu img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.sair {
+    margin-top: auto;
+    margin-bottom: 35px;
+}
+
+.sair img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.item-menu {
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.item-menu:hover {
+    background-color: #2c0109;
+}
+
+.item-menu.ativo {
+    background-color: #2c0109;
+}
+
+.conteudo-principal {
+    margin-left: 215px;
+    min-height: 100vh;
+    padding: 30px;
+    background-color: #210006;
+    color: #D9CBA8;
+}
