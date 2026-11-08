@@ -55,4 +55,21 @@
     box-shadow: 0 3px 35px rgba(0, 0, 0, 0.5);
     background-color: #6d102c;
     border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #b6450d;
+}
+
+.about {
+    display: flex;
+    background-color: #f9f7f0;
+    gap: 100px;
+}
+
+.bloco {
+    width: 720px;
+    margin-left: 150px;
 }
