@@ -43,7 +43,7 @@
     font-size: 18px;
     text-align: left;
     letter-spacing: 1px;
-    line-height: 1.5;
+    line-height: 1.7;
     color: #370010;
 }
 
@@ -65,10 +65,15 @@
 }
 
 .about {
-    padding: 100px 150px 100px 150px;
+    height: 100vh;
+    padding: 110px 140px 110px 150px;
     display: flex;
     background-color: #f9f7f0;
-    gap: 150px;
+    gap: 200px;
+    background-image:
+        url('../img/film-tape.png');
+    background-repeat: no-repeat;
+    background-position: bottom left;
 }
 
 .about-subtitle{
@@ -81,16 +86,26 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 550px;
-    gap: 20px;
+    max-width: 510px;
+    gap: 35px;
+}
+
+.card-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
 }
 
 .card {
     border: 1px solid #b6450d;
     border-radius: 20px;
-    width: 450px;
-    padding: 30px 35px 30px 35px;
-    margin-bottom: 63px;
+    width: 470px;
+    padding: 30px 45px 30px 45px;
     background-color: #FFFFFF;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+    width: 60%;
+    border-color: #b6450d91;
 }
