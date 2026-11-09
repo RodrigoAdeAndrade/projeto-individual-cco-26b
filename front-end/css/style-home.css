@@ -33,7 +33,7 @@
 
 .container-subtitle{
     font-size: 22px;
-    text-align: justify;
+    text-align: left;
     letter-spacing: 1px;
     color: #6d102c;
     margin-bottom: 12px;
@@ -43,6 +43,7 @@
     font-size: 18px;
     text-align: left;
     letter-spacing: 1px;
+    line-height: 1.5;
     color: #370010;
 }
 
@@ -52,7 +53,7 @@
     color: #FFFFFF;
     padding: 12px 28px 12px 28px;
     margin-top: 32px;
-    box-shadow: 0 3px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
     background-color: #6d102c;
     border-radius: 20px;
     transition: 0.3s;
@@ -64,12 +65,32 @@
 }
 
 .about {
+    padding: 100px 150px 100px 150px;
     display: flex;
     background-color: #f9f7f0;
-    gap: 100px;
+    gap: 150px;
+}
+
+.about-subtitle{
+    color: #6d102c;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 .bloco {
-    width: 720px;
-    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 550px;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #b6450d;
+    border-radius: 20px;
+    width: 450px;
+    padding: 30px 35px 30px 35px;
+    margin-bottom: 63px;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
