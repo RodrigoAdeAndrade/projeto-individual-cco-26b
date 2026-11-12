@@ -26,9 +26,10 @@
     padding-right: 50px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5), 0 10px 15px rgba(0, 0, 0, 0.5);
     height: 550px;
-    width: 590px;
+    width: 600px;
     border-radius: 50px;
     background-color: #f9f7f0;
+    border: 1px solid #b6450d;
 }
 
 .container-subtitle{
@@ -40,19 +41,19 @@
 }
 
 .home-text{
-    font-size: 18aupx;
+    font-size: 18px;
     text-align: left;
     letter-spacing: 1px;
     line-height: 1.5;
     color: #370010;
-    padding-bottom: 30px;
 }
 
 .cta-button{
+    margin-top: 25px;
     font-size: 18px;
     font-weight: bold;
     color: #FFFFFF;
-    padding: 12px 28px 12px 28px;
+    padding: 10px 25px 10px 25px;
     margin-top: 25 px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
     background-color: #6d102c;
@@ -62,7 +63,7 @@
 }
 
 .cta-button:hover {
-    background-color: #b6450d;
+    background-color: #cf4b09;
 }
 
 .about {
@@ -70,7 +71,7 @@
     padding: 110px 140px 110px 150px;
     display: flex;
     background-color: #f9f7f0;
-    gap: 200px;
+    gap: 230px;
     background-image:
         url('../img/film-tape.png');
     background-repeat: no-repeat;
@@ -87,21 +88,21 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 510px;
+    max-width: 480px;
     gap: 35px;
 }
 
 .card-bloco {
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 80px;
 }
 
 .card {
     border: 1px solid #b6450d;
     border-radius: 20px;
-    width: 470px;
-    padding: 30px 45px 30px 45px;
+    width: 460px;
+    padding: 30px 40px 30px 40px;
     background-color: #FFFFFF;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
