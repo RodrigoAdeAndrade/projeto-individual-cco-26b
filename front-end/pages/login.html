@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - ToShare</title>
-    <link rel="stylesheet" href="style-login.css">
+    <link rel="stylesheet" href="../css/style-login.css">
 </head>
 <body>
-    <form action="acessar-conta"></form>
+    <form action="acessar-conta" class="login-container">
+        <div class="login-title">
+            <h1>Acesse sua conta</h1>
+        </div>
+        <div class="campo">
+            <label for="ipt_username">Nome de usuário</label>
+            <input type="text" id="ipt_username">
+            <p id="msg_username"></p>
+        </div>
+        <div class="campo">
+            <label for="ipt_senha">Senha</label>
+            <input type="text" id="ipt_senha">
+            <p id="msg_senha"></p>
+        </div>
+        <div>
+            <button onsubmit="acessar-conta" class="login-button">
+                Acessar conta
+            </button>
+        </div>
+    </form>
 </body>
 </html>
