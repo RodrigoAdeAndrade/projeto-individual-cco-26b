@@ -32,19 +32,20 @@
 }
 
 .container-subtitle{
-    font-size: 22px;
+    font-size: 19px;
     text-align: left;
     letter-spacing: 1px;
     color: #6d102c;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 .home-text{
-    font-size: 18px;
+    font-size: 17px;
     text-align: left;
     letter-spacing: 1px;
-    line-height: 1.7;
+    line-height: 1.5;
     color: #370010;
+    padding-bottom: 30px;
 }
 
 .cta-button{
