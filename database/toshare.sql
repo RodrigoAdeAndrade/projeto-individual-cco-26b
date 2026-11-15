@@ -37,3 +37,14 @@ CONSTRAINT cfk_filme
 	FOREIGN KEY (fk_filme)
     REFERENCES filme(id)
 );
+
+CREATE TABLE genero (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome varchar(50)
+);
+
+ALTER TABLE filme
+	ADD COLUMN fk_genero INT,
+	ADD CONSTRAINT cfk_genero
+		FOREIGN KEY (fk_genero)
+        REFERENCES genero (id);
