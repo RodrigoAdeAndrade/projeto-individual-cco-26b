@@ -7,6 +7,60 @@
     font-family: "DM Sans", sans-serif;
 }
 
+.header{
+    background-color: #f9f7f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 35px 0px 35px;
+    font-size: 18px;
+}
+
+.header-title {
+    margin-right: 150px;
+
+}
+.header-title img{
+    width: 55px;
+    height: 65px;
+}
+.header-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header-nav a {
+    color: #370010;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.header-nav a:hover {
+    color: #cf4b09;
+}
+
+.header-button {
+    display: flex;
+    gap: 30px;
+}
+
+.header-button a {
+    background-color: #FFFFFF;
+    color: #370010;
+    cursor: pointer;
+    border: 1px solid #cf4b09;
+    border-radius: 10px;
+    padding: 5px 13px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.header-button a:hover {
+    color: #f9f7f0;
+    background-color: #b6450d;
+}
+
 .cta{
     display: flex;
     flex-direction: column;
