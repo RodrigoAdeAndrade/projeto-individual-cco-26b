@@ -7,29 +7,30 @@
     <link rel="stylesheet" href="../css/style-cadastro.css">
 </head>
 <body>
-    <form action="cadastrar-usuario" class="cad-container">
+    <form action="cadastrar-usuario" class="cad-container" onsubmit="cadastrarUsuario(event)">
         <div class="cad-title">
             <h1>Criar conta</h1>
         </div>
         <div class="campo">
             <label for="">Nome de usuário</label>
-            <input type="text" id="ipt_username" placeholder="Ex: nome_usuario">
-            <p id="msg_username"></p>
+            <input type="text" id="ipt_username" placeholder="Ex: nome_usuario" oninput="validarUsername()">
+            <p class="msg-validando" id="msg_username"></p>
         </div>
         <div class="campo">
             <label for="">Email</label>
-            <input type="text" id="ipt_email" placeholder="Ex: usuario@mail.com">
-            <p id="msg_email"></p>
+            <input type="text" id="ipt_email" placeholder="Ex: usuario@mail.com" oninput="validarEmail()">
+            <p class="msg-validando" id="email_arroba"></p>
+            <p class="msg-validando" id="email_antes"></p>
         </div>
         <div class="campo">
             <label for="">Senha</label>
             <input type="text" id="ipt_senha" placeholder="Mínimo de 6 caracteres">
-            <p id="msg_senha"></p>
+            <p class="msg-validando" id="msg_senha"></p>
         </div>
         <div class="campo">
             <label for="">Confirmar senha</label>
             <input type="text" id="ipt_conf_senha" placeholder="Repita a senha">
-            <p id="msg_conf_senha"></p>
+            <p class="msg-validando" id="msg_conf_senha"></p>
         </div>
         <div>
             <button  type="onsubmit" class="cad-button">
@@ -39,3 +40,4 @@
     </form>
 </body>
 </html>
+<script src="../js/cadastro.js"></script>
