@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style-cadastro.css">
 </head>
 <body>
-    <form action="cadastrar-usuario" class="cad-container" onsubmit="cadastrarUsuario(event)">
+    <form action="/cadastrar-usuario" class="cad-container" onsubmit="cadastrarUsuario(event)">
         <div class="cad-title">
             <h1>Faça parte da comunidade</h1>
         </div>
@@ -23,17 +23,17 @@
         </div>
         <div class="campo">
             <label for="ipt_senha">Senha</label>
-            <input type="text" id="ipt_senha" placeholder="Mínimo de 6 caracteres" oninput="validarSenha()">
+            <input type="password" id="ipt_senha" placeholder="Mínimo de 6 caracteres" oninput="validarSenha()">
             <p class="msg-validando" id="msg_senha"></p>
             <p class="msg-validando" id="msg_caractere"></p>
         </div>
         <div class="campo">
             <label for="ipt_conf_senha">Confirmar senha</label>
-            <input type="text" id="ipt_conf_senha" placeholder="Repita a senha" oninput="confirmarSenha()">
+            <input type="password" id="ipt_conf_senha" placeholder="Repita a senha" oninput="confirmarSenha()">
             <p class="msg-validando" id="msg_conf_senha"></p>
         </div>
         <div>
-            <button  type="onsubmit" class="cad-button">
+            <button  type="submit" class="cad-button">
                 Cadastrar
             </button>
         </div>
@@ -42,5 +42,5 @@
         <p>Já possui uma conta?<a href="login.html"> Entrar</a></p>
     </div>
 </body>
-</html>
 <script src="../js/cadastro.js"></script>
+</html>
