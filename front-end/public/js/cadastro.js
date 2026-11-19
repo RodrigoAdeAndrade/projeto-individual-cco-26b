@@ -90,16 +90,13 @@ function cadastrarUsuario(event) {
     if (cadastro_valido) {
 
         let cadastro_usuario = {
-            username: ipt_username.value,
-            email: ipt_email.value,
-            senha: ipt_senha.value,
+            username: ipt_username.value.trim(),
+            email: ipt_email.value.trim(),
+            senha: ipt_senha.value.trim(),
         }
 
-        console.log(cadastro_usuario)
-        //localStorage.setItem('cadastro_usuario', JSON.stringify(cadastro_usuario))
-        //console.log(localStorage.getItem('cadastro_usuario'))
 
-        fetch("/usuarios-cadastrar", {
+        fetch("http://localhost:3333/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -116,7 +113,6 @@ function cadastrarUsuario(event) {
                 if (resposta.ok) {
                     alert("Cadastro realizado com sucesso! Aguarde um momento...");
                     sessionStorage.EMAIL_USUARIO = cadastro_usuario.email;
-                    sessionStorage.SENHA_USUARIO = cadastro_usuario.senha;
                     window.location.href = 'login.html';
 
                 } else {
