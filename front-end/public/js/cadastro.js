@@ -114,7 +114,7 @@ function cadastrarUsuario(event) {
         })
             .then(function (resposta) {
                 if (resposta.ok) {
-                    alert("Cadastro realizado com sucesso! Redirecionando para cadastro da sua empresa...");
+                    alert("Cadastro realizado com sucesso! Aguarde um momento...");
                     sessionStorage.EMAIL_USUARIO = cadastro_usuario.email;
                     sessionStorage.SENHA_USUARIO = cadastro_usuario.senha;
                     window.location.href = 'login.html';
