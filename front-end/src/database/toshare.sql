@@ -176,4 +176,12 @@ INSERT INTO filme (titulo, data_lancamento, poster_path, fk_genero) VALUES
 ('Bugonia', '2025-10-24', '../posters/bugonia.webp', 3),
 ('Acompanhante Perfeita', '2025-01-31', '../posters/acompanhante.webp', 3);
 
-
+CREATE VIEW vw_catalogo_filmes AS
+	SELECT
+		f.titulo 'Filme',
+        g.nome 'Gênero',
+        YEAR(f.data_lancamento) 'Ano de lançamento'
+	FROM filme f
+		JOIN genero g
+			ON f.fk_genero = g.id
+	ORDER BY f.data_lancamento;
