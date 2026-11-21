@@ -180,7 +180,8 @@ CREATE VIEW vw_catalogo_filmes AS
 	SELECT
 		f.titulo 'Filme',
         g.nome 'Gênero',
-        YEAR(f.data_lancamento) 'Ano de lançamento'
+        YEAR(f.data_lancamento) 'Ano de lançamento',
+        f.poster_path 'caminho'
 	FROM filme f
 		JOIN genero g
 			ON f.fk_genero = g.id
