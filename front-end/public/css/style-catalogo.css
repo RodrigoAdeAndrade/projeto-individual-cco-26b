@@ -66,9 +66,9 @@
 
 .catalogo-body {
     background-color: #f9f7f0;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    padding: 50px 70px 50px 250px;
+    padding: 50px 70px 50px 260px;
 }
 
 .container-filme {
@@ -101,10 +101,16 @@
 .info {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     padding: 5px 2px;
     width: 100%;
+}
+
+.info span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .detalhes {
@@ -112,5 +118,5 @@
     justify-content: space-between;
     font-size: 10px;
     text-transform: uppercase;
-    padding: 2px;
+    padding: 0px 3px;
 }
