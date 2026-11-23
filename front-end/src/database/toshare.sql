@@ -186,3 +186,7 @@ CREATE VIEW vw_catalogo_filmes AS
 		JOIN genero g
 			ON f.fk_genero = g.id
 	ORDER BY f.data_lancamento;
+    
+UPDATE filme set poster_path = '../posters/vivomorto.webp' WHERE id = 121;
+
+select * from filme;
