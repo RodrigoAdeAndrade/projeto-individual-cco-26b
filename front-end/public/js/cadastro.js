@@ -102,12 +102,10 @@ function cadastrarUsuario(event) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 nomeServer: cadastro_usuario.username,
                 emailServer: cadastro_usuario.email,
                 senhaServer: cadastro_usuario.senha
-            }),
+            })
         })
             .then(function (resposta) {
                 if (resposta.ok) {

@@ -62,11 +62,25 @@ body {
     background-color: #ffffff;
 }
 
+.campo p {
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.msg-validando {
+    color: #cd0202;
+}
+
+.msg-valida {
+    color: green;
+}
+
 .login-button {
     background-color: #6d102c;
     color: #ffffff;
     padding-top: 8px;
     padding-bottom: 8px;
+    margin-bottom: 5px;
     font-size: 16px;
     width: 100%;
     max-width: 440px;
@@ -96,4 +110,8 @@ body {
 .cad-login a:hover {
     font-weight: bold;
     transform: scale(1.001);
+}
+
+.acesso {
+    text-align: center;
 }

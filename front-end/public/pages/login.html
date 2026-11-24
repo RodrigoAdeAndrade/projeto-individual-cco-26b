@@ -9,30 +9,31 @@
 </head>
 
 <body>
-    <form action="acessar-conta" class="login-container">
+    <form action="/acessar-conta" class="login-container" onsubmit="acessarConta(event)" >
         <div class="login-title">
             <h1>Acesse sua conta</h1>
         </div>
         <div class="campo">
-            <label for="ipt_username">Email</label>
-            <input type="text" id="ipt_email" placeholder="Digite seu email">
+            <label for="ipt_email">Email</label>
+            <input type="text" id="ipt_email" placeholder="Digite seu email" oninput="validarEmail()">
             <p id="msg_email"></p>
         </div>
         <div class="campo">
             <label for="ipt_senha">Senha</label>
-            <input type="text" id="ipt_senha" placeholder="Digite sua senha">
+            <input type="password" id="ipt_senha" placeholder="Digite sua senha" oninput="validarSenha()">
             <p id="msg_senha"></p>
         </div>
-        <div>
-            <button onsubmit="acessar-conta" class="login-button">
+        <div class="acesso">
+            <button type="submit" class="login-button">
                 Acessar conta
             </button>
+            <p id="msg_login" class="msg-validando"></p>
         </div>
+        <p></p>
     </form>
     <div class="cad-login">
         <p>Ainda não é usuário? <a href="cadastro.html">Cadastre-se</a></p>
     </div>
 </body>
-
+<script src="../js/login.js"></script>
 </html>
-<script src=""></script>
