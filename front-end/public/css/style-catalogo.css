@@ -113,6 +113,26 @@
     text-overflow: ellipsis;
 }
 
+.info button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.info img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.info img:hover {
+    transform: scale(1.15);
+}
+
 .detalhes {
     display: flex;
     justify-content: space-between;

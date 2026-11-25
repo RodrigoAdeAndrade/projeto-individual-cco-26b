@@ -21,7 +21,9 @@ function listarFilmes() {
                 <img class="poster" src="${caminho}">
                 <div class="info">
                     <span>${titulo}</span>
-                    <a href=""><img src="../img/heart.png"></a>
+                    <button data-curtido="false">
+                        <img src="../img/heart.png">
+                    </button>
                 </div>
                 <div class="detalhes">
                     <span>${genero}</span>
