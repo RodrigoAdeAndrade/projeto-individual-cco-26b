@@ -189,4 +189,38 @@ CREATE VIEW vw_catalogo_filmes AS
     
 UPDATE filme set poster_path = '../posters/vivomorto.webp' WHERE id = 121;
 
-select * from filme;
+CREATE VIEW vw_kpi3 AS
+	SELECT 
+		g.nome as genero,
+        COUNT(g.nome) as qtd_vezes
+	FROM filme_assistido as fa
+	JOIN filme as f
+		ON fa.fk_filme = f.id
+	RIGHT JOIN genero as g
+		ON f.fk_genero = g.id
+	WHERE TIMESTAMPDIFF(DAY, fa.data_assistido, NOW()) BETWEEN 0 AND 7
+	GROUP BY g.nome
+    LIMIT 1;
+    
+CREATE VIEW vw_kpi1 AS
+	SELECT
+		f.titulo as filme,
+        COUNT(f.titulo) as qtd_filme
+	FROM filme_assistido as fa
+	JOIN filme as f
+		ON fa.fk_filme = f.id
+	WHERE TIMESTAMPDIFF(DAY, fa.data_assistido, NOW()) BETWEEN 0 AND 7
+	GROUP BY f.titulo
+    LIMIT 1;
+    
+CREATE VIEW vw_kpi2 AS
+	SELECT
+		AVG(total_curtidas) AS media_curtidas
+	FROM (
+		SELECT
+			COUNT(data_assistido) AS total_curtidas
+		FROM filme_assistido
+        WHERE TIMESTAMPDIFF(DAY, data_assistido, NOW()) BETWEEN 0 AND 7
+        GROUP BY DATE(data_assistido)
+        ) AS curtidas_dia;
+		
