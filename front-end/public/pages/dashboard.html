@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard - ToShare</title>
+    <link rel="stylesheet" href="../css/style-dashboard.css">
 </head>
+
 <body>
-    dsdsdsd
+    <section class="side-bar">
+        <div class="logo-side">
+            <img src="../img/logo-sidebar.png" alt="">
+        </div>
+        <div class="nav">
+            <a href="catalogo.html" class="nav-icon"><img class="correc-img" src="../img/catalogo-sidebar.png"
+                    alt=""></a>
+            <a href="" class="nav-icon"><img src="../img/dash-sidebar.png" alt=""></a>
+        </div>
+        <div class="logout-side">
+            <a href="login.html"><img src="../img/logout-sidebar.png" alt=""></a>
+        </div>
+    </section>
+
+    <section class="dashboard">
+        <div class="title">
+            <h1>Atividade nos últimos 7 dias</h1>
+            <p>Dashboard com informações sobre as movimentações recentes da comunidade</p>
+        </div>
+        <div class="bloco-kpi">
+            <div class="card-kpi" id="kpi1">
+                <h3>filme da semana</h3>
+                <div id="info_kpi1"></div>
+                <p>Mais curtido nos últimos 7 dias</p>
+            </div>
+
+            <div class="card-kpi" id="kpi2">
+                <h3>média de filmes curtidos por dia</h3>
+                <div id="info_kpi2"></div>
+                <p>Mais curtido nos últimos 7 dias</p>
+            </div>
+
+            <div class="card-kpi" id="kpi3">
+                <h3>gênero da semana</h3>
+                <div id="info_kpi3"></div>
+                <p>Gênero mais recorrente da comunidade</p>
+            </div>
+        </div>
+
+        <div class="bloco-grafico">
+
+            <div class="card-grafico-linha" id="card_grafico_linha">
+                <div>
+                    <h2>Filmes curtidos por dia</h2>
+                    <p>Quantidade de curtidas da comunidade por dia</p>
+                </div>
+                <div>
+                    <canvas id="grafico_linha" class="grafico-linha"></canvas>
+                </div>
+            </div>
+
+            <div class="card-grafico-barra" id="card_grafico_barra">
+                <div>
+                    <h2>Distribuição de registros por período</h2>
+                    <p>Alguma coisa...</p>
+                </div>
+                <div>
+                    <canvas id="grafico_barra" class="grafico-barra"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/dashboard.js"></script>
 </html>

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 150px;
+    padding: 30px 25px;
+    position: fixed;
+    transition: 0.3s;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f7f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-side {
+    margin-left: 10px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+
+}
+
+.nav-icon {
+    border-radius: 15px;
+    padding: 10px 30px 5px 30px;
+    width: 100%;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    border: none;
+
+}
+
+.nav-icon:hover {
+    background-color: #ffffff;
+    border: 1px solid #d64a04;
+    transform: scale(1.05);
+}
+
+.correc-img {
+    margin-left: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.logout-side {
+    transition: 0.3s;
+}
+
+.logout-side:hover {
+    transform: scale(1.1);
+}
+
+.dashboard {
+    background-color: #f9f7f0;
+    padding: 40px 30px 40px 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+}
+
+p {
+    color: #370010;
+}
+
+.title {
+    letter-spacing: 1px;
+    margin-left: 15px;
+}
+
+.title h1 {
+    color: #6d102c;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.bloco-kpi {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-kpi {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 330px;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #d64a04;
+    border-radius: 15px;
+    padding: 8px 10px;
+    gap: 15px;
+}
+
+.card-kpi h3 {
+    font-weight: 600;
+    color: #370010;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.card-kpi div {
+    font-weight: 800;
+    font-size: 20px;
+    color: #6d102c;
+}
+
+.card-kpi p {
+    font-size: 12px;
+}
+
+.bloco-grafico {
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.5px;
+}
+
+.bloco-grafico h2 {
+    font-size: 22px;
+    color: #6d102c;
+}
+
+.bloco-grafico p {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.card-grafico-linha {
+    background-color: #ffffff;
+    border: 1px solid #d64a04;
+    border-radius: 15px;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 730px;
+}
+
+.card-grafico-barra {
+    background-color: #ffffff;
+    border: 1px solid #d64a04;
+    border-radius: 15px;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    gap: 15px;
+}
