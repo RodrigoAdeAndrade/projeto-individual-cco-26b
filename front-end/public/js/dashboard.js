@@ -31,7 +31,7 @@ new Chart(ctx2, {
             data: [10, 8, 12, 6, 8, 3],
             backgroundColor: '#d64a04',
             borderWidth: 1,
-            barThickness: 40
+            barThickness: 35
         }]
     },
     options: {

@@ -176,6 +176,7 @@ INSERT INTO filme (titulo, data_lancamento, poster_path, fk_genero) VALUES
 ('Bugonia', '2025-10-24', '../posters/bugonia.webp', 3),
 ('Acompanhante Perfeita', '2025-01-31', '../posters/acompanhante.webp', 3);
 
+
 CREATE VIEW vw_catalogo_filmes AS
 	SELECT
 		f.titulo 'Filme',
@@ -187,20 +188,24 @@ CREATE VIEW vw_catalogo_filmes AS
 			ON f.fk_genero = g.id
 	ORDER BY f.data_lancamento;
     
+    
 UPDATE filme set poster_path = '../posters/vivomorto.webp' WHERE id = 121;
+
 
 CREATE VIEW vw_kpi3 AS
 	SELECT 
-		g.nome as genero,
-        COUNT(g.nome) as qtd_vezes
-	FROM filme_assistido as fa
-	JOIN filme as f
+		g.nome AS genero,
+        COUNT(g.nome) AS qtd_genero
+	FROM filme_assistido AS fa
+	JOIN filme AS f
 		ON fa.fk_filme = f.id
-	RIGHT JOIN genero as g
+	RIGHT JOIN genero AS g
 		ON f.fk_genero = g.id
-	WHERE TIMESTAMPDIFF(DAY, fa.data_assistido, NOW()) BETWEEN 0 AND 7
+	WHERE TIMESTAMPDIFF(DAY, fa.data_assistido, NOW()) BETWEEN 0 AND 6
 	GROUP BY g.nome
+    ORDER BY qtd_genero DESC
     LIMIT 1;
+    
     
 CREATE VIEW vw_kpi1 AS
 	SELECT
@@ -209,18 +214,60 @@ CREATE VIEW vw_kpi1 AS
 	FROM filme_assistido as fa
 	JOIN filme as f
 		ON fa.fk_filme = f.id
-	WHERE TIMESTAMPDIFF(DAY, fa.data_assistido, NOW()) BETWEEN 0 AND 7
+	WHERE TIMESTAMPDIFF(DAY, fa.data_assistido, NOW()) BETWEEN 0 AND 6
 	GROUP BY f.titulo
+    ORDER BY qtd_filme DESC
     LIMIT 1;
+    
     
 CREATE VIEW vw_kpi2 AS
 	SELECT
-		AVG(total_curtidas) AS media_curtidas
+		COUNT(*) / 7 AS media_curtidas
+	FROM filme_assistido
+	WHERE TIMESTAMPDIFF(DAY, data_assistido, NOW()) BETWEEN 0 AND 6;
+    
+    
+CREATE VIEW vw_grafico_linha AS
+	SELECT
+		DATE(data_assistido) AS dia,
+		COUNT(*) AS curtidas_dia
+	FROM filme_assistido
+    WHERE TIMESTAMPDIFF(DAY, data_assistido, NOW()) BETWEEN 0 AND 6
+    GROUP BY DATE(data_assistido)
+    ORDER BY dia;
+    
+    
+CREATE VIEW vw_grafico_barra AS
+	SELECT
+		periodo,
+		COUNT(*) AS qtd_registros
 	FROM (
-		SELECT
-			COUNT(data_assistido) AS total_curtidas
-		FROM filme_assistido
-        WHERE TIMESTAMPDIFF(DAY, data_assistido, NOW()) BETWEEN 0 AND 7
-        GROUP BY DATE(data_assistido)
-        ) AS curtidas_dia;
-		
+    SELECT
+		CASE
+			WHEN HOUR(data_assistido) >= 6 AND HOUR(data_assistido) < 10
+				THEN '06h - 10h'
+			WHEN HOUR(data_assistido) >= 10 AND HOUR(data_assistido) < 14
+				THEN '10h - 14h'
+			WHEN HOUR(data_assistido) >= 14 AND HOUR(data_assistido) < 18
+				THEN '14h - 18h'
+			WHEN HOUR(data_assistido) >=18 AND HOUR(data_assistido) < 22
+				THEN '18h - 22h'
+			WHEN HOUR(data_assistido) >=22 OR HOUR(data_assistido) < 2
+				THEN '22h - 02h'
+			WHEN HOUR(data_assistido) >= 2 AND HOUR(data_assistido) < 6
+				THEN '02h - 06h'
+			END AS periodo
+        FROM filme_assistido
+        WHERE TIMESTAMPDIFF(DAY, data_assistido, NOW()) BETWEEN 0 AND 6
+        ) AS periodos
+        GROUP BY periodos.periodo
+        ORDER BY
+			CASE
+				WHEN periodo = '06h - 10h' THEN 1
+				WHEN periodo = '10h - 14h' THEN 2
+				WHEN periodo = '14h - 18h' THEN 3
+				WHEN periodo = '18h - 22h' THEN 4
+				WHEN periodo = '22h - 02h' THEN 5
+				WHEN periodo = '02h - 06h' THEN 6
+			END;
+	
